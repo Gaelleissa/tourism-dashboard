@@ -6,7 +6,8 @@ import plotly.express as px
 st.title("Interactive Tourism Dashboard")
 
 # Load CSV
-file_path = r"C:\Users\User\Desktop\assig 2.csv"  # update if needed
+file_path = "assig 2.csv"
+
 df = pd.read_csv(file_path)
 
 # Tabs for charts
@@ -155,12 +156,4 @@ with tab2:
     else:
         st.write("No regions match the selected filters.")
 
- # Statistical Analysis (Bar Chart ONLY)
-    st.subheader("Statistical Analysis (Bar Chart)")
-    if not bar_df_filtered.empty:
-        mean_val = round(bar_df_filtered["Total number of restaurants"].mean(), 2)
-        median_val = round(bar_df_filtered["Total number of restaurants"].median(), 2)
-        std_val = round(bar_df_filtered["Total number of restaurants"].std(), 2)
-        st.markdown(f"- Mean restaurants per region: **{mean_val}**")
-        st.markdown(f"- Median restaurants per region: **{median_val}**")
-        st.markdown(f"- Standard deviation: **{std_val}**")
+
